@@ -12,7 +12,7 @@ use function substr;
 class Main extends PluginBase{
 
     public function onLoad(){
-        $config = new Config('SideLoader.yml', Config::YAML, [
+        $config = new Config($this->getDataFolder() . 'SideLoader.yml', Config::YAML, [
             'dirs' => [
                 'directory/',
             ],
