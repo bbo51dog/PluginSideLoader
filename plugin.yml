@@ -1,0 +1,5 @@
+name: PluginSideLoader
+api: [3.0.0]
+main: bbo51dog\sideloader\Main
+author: bbo51dog
+version: 1.0-dev
