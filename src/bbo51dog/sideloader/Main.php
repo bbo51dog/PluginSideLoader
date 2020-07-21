@@ -35,8 +35,15 @@ class Main extends PluginBase{
                 if(file_exists($path) && is_dir($path)){
                     $this->getServer()->getPluginManager()->loadPlugin($path, [$loader]);
                     unset($plugins[$k]);
+                    $this->getLogger()->notice("Plugin {$plugin} is successfully loaded from {$path}");
                 }
             }
+        }
+        if(empty($plugins)){
+            return;
+        }
+        foreach($plugins as $plugin){
+            $this->getLogger()->warning("Plugin {$plugin} not found");
         }
     }
 
