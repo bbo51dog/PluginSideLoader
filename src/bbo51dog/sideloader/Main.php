@@ -5,6 +5,7 @@ namespace bbo51dog\sideloader;
 use pocketmine\plugin\PluginBase;
 use pocketmine\plugin\PluginLoadOrder;
 use pocketmine\utils\Config;
+use pocketmine\utils\TextFormat as TF;
 use function file_exists;
 use function is_dir;
 use function substr;
@@ -35,7 +36,7 @@ class Main extends PluginBase{
                 if(file_exists($path) && is_dir($path)){
                     $this->getServer()->getPluginManager()->loadPlugin($path, [$loader]);
                     unset($plugins[$k]);
-                    $this->getLogger()->notice("Plugin {$plugin} is successfully loaded from {$path}");
+                    $this->getLogger()->info(TF::AQUA . "Plugin " . TF::GOLD . $plugin . TF::AQUA . " is successfully loaded from {$path}");
                 }
             }
         }
