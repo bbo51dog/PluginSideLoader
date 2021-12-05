@@ -1,1 +1,7 @@
-.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/discord.xml
+.idea/dataSources.xml
+.idea/sqldialects.xml
+
+vendor/

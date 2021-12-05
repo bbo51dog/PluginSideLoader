@@ -1,0 +1,8 @@
+{
+    "name": "bbo51dog/plugin_side_loader",
+    "description": "PMMP side loader",
+    "license": "MIT",
+    "require": {
+        "pocketmine/pocketmine-mp": "4.*"
+    }
+}
