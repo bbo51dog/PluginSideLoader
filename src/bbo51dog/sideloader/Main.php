@@ -2,6 +2,7 @@
 
 namespace bbo51dog\sideloader;
 
+use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 
@@ -13,8 +14,10 @@ class Main extends PluginBase{
                 'directory/',
             ]
         ]);
-        $loader = new FolderPluginLoader();
-        $this->getServer()->getPluginManager()->registerInterface($loader);
+        $devTools = $this->getServer()->getPluginManager()->getPlugin("DevTools");
+        if (!$devTools instanceof Plugin || !$devTools->isEnabled()) {
+            $this->getServer()->getPluginManager()->registerInterface(new FolderPluginLoader());
+        }
         /** @var string[] $dirs */
         $dirs = $config->get('dirs');
         $loadedPlugins = [];
